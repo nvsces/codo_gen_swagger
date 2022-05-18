@@ -41,4 +41,4 @@ import 'package:source_gen/source_gen.dart';
 import 'src/swag_api_generator.dart';
 
 Builder generateSwagApi(BuilderOptions options) =>
-    SharedPartBuilder([SwagApiGenerator()], 'generateSwagApi');
+    LibraryBuilder(SwagApiGenerator(), generatedExtension: '.sw.dart');

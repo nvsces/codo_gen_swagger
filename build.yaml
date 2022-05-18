@@ -3,13 +3,12 @@ targets:
     builders:
       codo_gen_swagger:
         enabled: true
-
 builders:
   generators:
     target: ":codo_gen_swagger"
     import: "package:codo_gen_swagger/builder.dart"
     builder_factories: ["generateSwagApi"]
-    build_extensions: { ".dart": [".g.dart"] }
+    build_extensions: { ".dart": [".sw.dart"] }
+    required_inputs: ['.sw.dart']
     auto_apply: dependents
-    build_to: cache
-    applies_builders: ["source_gen|combining_builder"]
+    build_to: source
